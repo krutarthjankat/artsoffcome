@@ -200,7 +200,7 @@ export default function JEEChapterManagement() {
     const IconComponent = chapterIcons[index % chapterIcons.length];
     const stats = calculateStats(chapter);
     return (
-      <div className="flex flex-row items-start sm:items-center justify-between gap-2 sm:gap-4 p-0 md:p-3 rounded-lg md:border md:border-gray-200 md:dark:border-[var(--border)] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+      <div className="flex flex-row items-start sm:items-center justify-between gap-2 sm:gap-4 p-0 md:p-3 rounded-lg md:border md:border-gray-300 md:dark:border-[var(--border)] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
         {/* Icon + Chapter Info */}
         <div className="flex flex-row w-7/10 items-center gap-4 md:gap-1 lg:gap-4 truncate">
           {/* Icon */}
@@ -258,7 +258,7 @@ export default function JEEChapterManagement() {
       <div className="hidden md:block">
         <div className="flex justify-center h-screen">
           {/* Sidebar */}
-          <div className="w-1/4 lg:w-xs px-2 min-w-0 text-[var(--sidebar-foreground)] border-r border-[var(--sidebar-border)] dark:text-[var(--sidebar-foreground)] dark:border-[var(--sidebar-border)]">
+          <div className="w-1/4 lg:w-xs px-2 min-w-0 text-[var(--sidebar-foreground)] border-r border-[var(--sidebar-border)] dark:text-[var(--sidebar-foreground)] dark:border-[var(--border)]">
             <div className="flex-col p-2 lg:p-6 gap-4 h-screen">
               <div>
                 <div className="flex items-center justify-center mb-3">
@@ -275,7 +275,7 @@ export default function JEEChapterManagement() {
                     <span className="font-bold text-xl">JEE Main</span>
                   </div>
                 </div>
-                <div className="text-xs lg:text-sm text-center mb-4 text-[var(--sidebar-ring)] dark:text-[var(--sidebar-ring)]">
+                <div className="text-xs lg:text-sm text-center mb-4 text-[var(--sidebar-ring)] dark:text-[#b9bfd0]">
                   2025 - 2009 | 173 Papers | 15825 Qs
                 </div>
               </div>
@@ -334,10 +334,10 @@ export default function JEEChapterManagement() {
           </div>
 
           {/* Main Content */}
-          <div className="flex flex-col xl:w-4xl lg:w-3xl md:w-xl ">
+          <div className="flex border flex-col w-[848px] ">
             {/* Header */}
-            <div className="p-6">
-              <div className="flex justify-center items-center gap-4 mb-3">
+            <div className="px-5 pt-5 pb-4 border-b dark:border-[#1e2738] flex flex-col gap-3">
+              <div className="flex justify-center items-center gap-4">
                 <div
                   className={`w-6 h-6 rounded-md flex items-center justify-center ${
                     activeTab === "Physics"
@@ -358,18 +358,18 @@ export default function JEEChapterManagement() {
                   )}
                 </div>
 
-                <h1 className="text-xl font-extrabold text-gray-900 dark:text-gray-100 text-center">
+                <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100 text-center">
                   {activeTab} PYQs
                 </h1>
               </div>
-              <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
+              <p className="text-sm text-gray-500 dark:text-[#b9bfd0] text-center">
                 Chapter-wise Collection of {activeTab} PYQs
               </p>
             </div>
 
             {/* Filters */}
-            <div className="px-4 pb-2">
-              <div className="flex items-center mb-4 gap-2 pb-2 ">
+            <div className="px-4 pt-3 py-2">
+              <div className="flex items-center mb-4 gap-2 pb-1">
                 <MultiSelectDropdown
                   title="Class"
                   options={uniqueClasses}
@@ -436,7 +436,7 @@ export default function JEEChapterManagement() {
                 </Toggle>
               </div>
             </div>
-
+            <hr className="border dark:border-[#1e2738]" />
             {/* Chapter List */}
             <div className="flex-1 overflow-y-scroll">
               <div className="space-y-4 p-4">
