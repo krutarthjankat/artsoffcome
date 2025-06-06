@@ -10,7 +10,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { useTheme } from "next-themes";
 import chaptersData from "../assets/data.json";
 import logo from "../assets/logo.jpg";
 import Image from "next/image";
@@ -29,7 +28,6 @@ import {
   ArrowDownIcon,
   ArrowUpIcon,
   ArrowLeftIcon,
-  FunnelSimpleIcon,
   ArrowsDownUpIcon,
   CaretDownIcon,
 } from "@phosphor-icons/react";
@@ -201,7 +199,6 @@ export default function JEEChapterManagement() {
   const ChapterItem = ({ chapter, index }: { chapter: any; index: number }) => {
     const IconComponent = chapterIcons[index % chapterIcons.length];
     const stats = calculateStats(chapter);
-
     return (
       <div className="flex flex-row items-start sm:items-center justify-between gap-2 sm:gap-4 p-0 md:p-3 rounded-lg md:border md:border-gray-200 md:dark:border-[var(--border)] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
         {/* Icon + Chapter Info */}
